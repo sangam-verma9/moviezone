@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/card";
 import { Link } from "react-router-dom";
+import Skeleton from "../components/layouts/Skeleton"
 
 const Home = () => {
   const [items, setItems] = useState([]);
@@ -43,9 +44,16 @@ const Home = () => {
             {items.length > 0 ? (
               items.map((movie) => <Card key={movie.id} movie={movie} />)
             ) : (
-              <p className="col-span-4 text-center text-lg text-gray-500">
-                No movies available at the moment.
-              </p>
+              <>
+                <Skeleton/>
+                <Skeleton/>
+                <Skeleton/>
+                <Skeleton/>
+                <Skeleton/>
+                <Skeleton/>
+                <Skeleton/>
+                <Skeleton/>
+              </>
             )}
           </div>
         </div>
